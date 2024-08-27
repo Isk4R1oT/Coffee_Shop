@@ -1,0 +1,264 @@
+﻿body {
+    width: 1920px;
+    height: auto;
+    background-color: black;
+    color: white;
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto
+}
+
+header .wrapper {
+    max-width: 1132px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #C7A17A;
+}
+
+.wrapper .topic-lang {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topic-lang {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 55px;
+    height: 55px;
+}
+
+.header-subtitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.menu-icon{
+    padding:10px;
+}
+
+.header-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+
+main {
+    padding: 40px;
+}
+
+
+
+
+.product {
+    text-align: center;
+    margin-bottom: 40px; 
+    display:flex;
+    align-items:start;
+    justify-content:center;
+  
+
+}
+
+main .wrapper h1 {
+    color: #FFF;
+    font-family: Jost;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 144%; /* 86.4px */
+    text-transform: uppercase;
+    margin: 0 0 40px 330px;
+}
+
+    .product h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+
+main .wrapper{
+    display:flex;
+    flex-direction:column;
+    
+}
+
+
+.price {
+    margin-top: 10px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: flex-start;
+    color: #FFF;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.down_product {
+    width: 400px;
+    height: 280px;
+    border-radius: 10px;
+    background: #14141D;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 19px;
+}
+
+.description{
+   margin-left:330px;
+}
+
+.name{
+    display:flex;
+}
+
+.add-to-cart {
+    width: 340px;
+    height: 50px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #C7A17A;
+    margin: 30px 30px 30px 30px;
+}
+.add-to-cart:hover{
+    background-color:sandybrown;
+}
+
+.img_container {
+    width: 780px;
+    height: 520px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #14141D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .img_container img {
+        width: 195px;
+        height: 400px;
+        flex-shrink: 0;
+    }
+
+    .price {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+.sizes {
+    display: flex;
+    margin-bottom: 15px;   
+    flex-shrink: 0;
+    margin: 0 0 0 30px;
+   
+}
+
+    .sizes button {
+        margin: 5px;
+        width: 50px;
+        height: 50px;       
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 2px solid #FFF;
+        background: #14141D;
+        text-align:center;
+    }
+
+        .sizes button:hover {
+            color: #C7A17A;
+            border-color: #C7A17A;
+        }
+.description {
+    margin-top: 20px;
+}
+
+.other-products {
+    text-align: center;
+    margin-top: 40px;
+}
+
+    .other-products h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+.product-item {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+    .product-item img {
+        width: 180px;
+        height: 180px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .product-item p {
+        margin-top: 10px;
+    }
+
+.pre_footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footerlogo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer_menu-icons p {
+    margin-bottom: 10px;
+}
+
+.contacts p {
+    margin-bottom: 10px;
+}

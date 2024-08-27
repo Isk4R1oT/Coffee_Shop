@@ -1,0 +1,100 @@
+﻿@using Coffee_Shop.Entities
+
+@model Coffee
+<!DOCTYPE html>
+<html>
+<head>
+    <header>
+        <div class="wrapper">
+            <div class="topic-lang">
+                <div class="lang">
+                    <p>ru en</p>
+                </div>
+                <div class="number">+371000000</div>
+            </div>
+            <div class="header-subtitle">
+                <div class="header-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Reservation</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <img src="~/images/HeaderLogo.png" alt="coffe-icon" class="icon">
+                <div class="menu-icons">
+                    <a href="@Url.Action("AddToBasket","Basket")">
+                        <img src="~/images/cart 1.png" alt="cart" class="menu-icon">
+                    </a>
+                    <img src="~/images/favorite 1.png" alt="favorite" class="menu-icon">
+                    <img src="~/images/user 1.png" alt="user" class="menu-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <title>@Model.Name</title>
+    <link rel="stylesheet" href="~/css/DetalesStyle.css">
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="name"><h1>@Model.Name</h1></div>
+            <div class="product">
+            <div class="top_product">           
+            <div class="img_container">
+                <img src="~/images/product1 1.png" alt="Lavazza Crema e Gusto">        
+            </div>
+            </div>
+            <div class="down_product">               
+                    <div class="price"><p>$<span class="product-price">@Model.Price</span></p></div>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                        <button class="size-btn" data-size="XXL">XXL</button>
+                    </div>
+                    <a href="@Url.Action("AddItemToBasket", "Basket", new { id = Model.Id })" class="add-to-cart">Добавить в корзину</a>
+            </div>
+            </div>
+        <div class="description">
+            <h2>Description</h2>
+            <p>@Model.Description</p> 
+            </div>
+        <div class="other-products">
+            <h3>Другие товары</h3>
+            <div class="product-item">
+                <img src="product1.jpg" alt="Product 1">
+                <p>Product 1    </p>
+            </div>
+            <div class="product-item">
+                <img src="product2.jpg" alt="Product 2">
+                <p>Product 2</p>
+            </div>
+            <div class="product-item">
+                <img src="product3.jpg" alt="Product 3">
+                <p>Product 3</p>
+            </div>
+        </div>
+    </main>
+    <footer class="pre_footer">
+        <div class="footer_logo-text">
+            <img class="footerlogo" src="~/images/HeaderLogo.png" />
+            <p class="footer_logo-text">CoffeMeet</p>
+        </div>
+        <div class="footer_menu-icons">
+            <ul>
+                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Reservation</a></li>
+            </ul>
+        </div>
+        <div class="contacts">
+            <p>Contacts</p>
+            <p>Privacy policy</p>
+        </div>
+    </footer>
+    <script src="~/js/DetalsJs.js"></script>
+</body>
+</html>

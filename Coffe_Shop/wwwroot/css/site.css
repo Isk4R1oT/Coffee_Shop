@@ -1,0 +1,285 @@
+body {
+    width: 1920px;
+    height: auto;
+    background-color: black;
+    color: white;
+    margin: 0;
+    margin-right:auto;
+    margin-left:auto
+}
+
+.background_img {
+
+    width: 1920px;
+    height: 720px;
+    flex-shrink: 0;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    display:flex;
+
+}
+
+header .wrapper {
+    max-width: 1132px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:black;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #C7A17A;
+}
+
+.wrapper .topic-lang {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topic-lang {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 55px;
+    height: 55px;
+}
+
+.header-subtitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.main .wrapper {
+    position: relative;
+}
+
+.menu-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 23px;
+}
+
+.main-img {
+    width: auto;
+    height: 720px;
+}
+
+.main-content {
+    position: absolute;
+    top: 200px;
+    left: 380px;
+}
+
+.main-btn button {
+    color: white;
+    border-color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #666681;
+    
+}
+
+   
+.btn-buy {
+    border-radius: 10px;
+    background-color: #C7A17A;
+}
+
+.read_more {
+    border-radius: 10px;
+    border: 1px solid #666681;
+    background: rgba(199, 161, 122, 0.00);
+}
+.smoll-text {
+    width: 535px;
+    height: 51.06px;
+    color: #DFDFDF;
+    margin: 35px 0 35px;
+    font-family: Jost;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.big-text {
+    width: 571px;
+    height: 152px;
+    color: #FFF;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 86px; /* 86.4px */
+    text-transform: uppercase;
+}
+
+.info-img {
+    width: 600px;
+    height: 330px;
+}
+
+.info-text {
+    width: 520px;
+    background-color: #14141D;
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px 40px 25px;
+    font-size: 18px;
+}
+
+.info .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.catalog .wrapper {
+    max-width: 1132px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+}
+
+.card {
+    width: 355px;
+    height: 372px;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    border-radius: 10px;
+    background: #14141D;    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin:21px
+    /* Set background color based on image */
+}
+
+.card-img-top {
+    border-radius: 5px 5px 0 0;
+    display:flex;
+    justify-content:center;
+    width: 97px;
+    height: 199px;
+    flex-shrink: 0;
+    object-fit: cover; /* This will crop the image to fit the container */
+}
+
+.img_container
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: 20px 0 30px 0;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    color: #FFF;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.card-text {
+    margin: 0 0 10px 0;
+    color: #FFF;
+    font-family: Jost;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.btn-primary { 
+    background-color: #e74c3c;
+    border-color: #e74c3c;   
+    border-radius: 3px;
+}
+
+
+.catalog .row {
+  
+    margin: 0 auto;
+}
+
+.col-md-4 {
+    padding: 10px;
+}
+
+
+    
+    .catalog h2 {
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        color: #FFF;
+        font-family: Jost;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 144%; 
+        text-transform: uppercase;
+    }
+.pre_footer
+{
+ display:flex;
+ justify-content:space-evenly;
+ align-items:center;
+}
+
+.footer_menu-icons{
+    display:flex;
+    flex-direction:column;
+}
+.footer_logo-text{
+
+}
+.contacts{
+    display:flex;
+    flex-direction:column;
+}
+
+

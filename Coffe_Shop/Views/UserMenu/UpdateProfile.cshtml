@@ -1,0 +1,68 @@
+﻿@using Coffee_Shop.Entities
+@model Client
+
+<style>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-control {
+        border-color: #ccc;
+        border-radius: 0.25rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+    }
+
+        .form-control:focus {
+            border-color: #66afe9;
+            box-shadow: 0 0 0 0.2rem rgba(102, 175, 233, 0.25);
+        }
+
+    .text-danger {
+        color: #dc3545 !important;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004a9b;
+        }
+
+</style>
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title">Редактировать профиль</h1>
+                </div>
+                <div class="card-body">
+                    <form asp-action="UpdateProfileDetails" method="post">
+                        <div class="form-group">
+                            <label for="name">Имя:</label>
+                            <input type="text" class="form-control" id="name" asp-for="Name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" asp-for="Email" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

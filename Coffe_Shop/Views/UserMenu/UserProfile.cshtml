@@ -1,0 +1,94 @@
+﻿@using Coffee_Shop.Entities
+@model Client
+
+<style>
+    
+    body{
+        background-color:black;        
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .card {       
+        width: 400px;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;       
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        background-color: #14141D;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+    .card-header {
+        background-color: #C7A17A;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .form-control-plaintext {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+    }
+    
+
+    .form-group {
+        text-align: center;
+        margin-top: 15px;
+        border-radius:5px;
+        color:white;        
+    }
+
+        .form-group a {           
+            text-decoration: none;
+            color: #B08C6E;
+        }
+
+            .form-group a:hover {
+                text-decoration: underline;
+                color: #B08C6E;
+            }
+</style>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title">Личный кабинет</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Имя:</label>
+                        <p class="form-control-plaintext" id="name">@Model.Name</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email:</label>
+                        <p class="form-control-plaintext" id="email">@Model.Email</p>
+                    </div>
+                    <div class="form-group">
+                        <a href="@Url.Action("UpdateProfileDetails","UserMenu", new {Client = Model })" class="btn btn-primary">Редактировать профиль</a>
+                    </div>
+                    <div class="form-group">
+                        <a href="@Url.Action("Index","Home")">Home</a>
+                    </div "form-group">
+                    <div>
+                        @* /* для просмотра тикущих заказов */ *@
+                        <a href="@Url.Action("Index","Home")">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

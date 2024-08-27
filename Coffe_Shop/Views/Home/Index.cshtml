@@ -1,0 +1,187 @@
+﻿@using Coffee_Shop.Models
+@using Coffee_Shop.Models
+@model CatalogCoffee
+@using Coffee_Shop.Controllers
+@using Coffee_Shop.Entities
+@using Coffee_Shop.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <title>Coffee-shop</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Coffe_Shop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Coffe_Shop.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="topic-lang">
+                <div class="lang">
+                    <p>ru en</p>
+                </div>
+                <div class="number">+371000000</div>
+            </div>
+            <div class="header-subtitle">
+                <div class="header-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Reservation</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <img src="~/images/HeaderLogo.png" alt="coffe-icon" class="icon">
+                <div class="menu-icons">
+                    <a href="@Url.Action("AddToBasket","Basket")">
+                    <img src="~/images/cart 1.png" alt="cart" class="menu-icon">
+                    </a>
+                    <img src="~/images/favorite 1.png" alt="favorite" class="menu-icon">                  
+                        <a href="@Url.Action("UserProfile","UserMenu")">
+                    <img src="~/images/user 1.png" alt="user" class="menu-icon">
+                        </a>                   
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="wrapper">
+            <img src="~/images/BeckgoundCofee.png">
+            <div class="main-content">
+                <div class="big-text">
+                    <h1>
+                        Roasted coffee
+                        best choice
+                    </h1>
+                </div>
+                <div class="smoll-text">
+                    <p>
+                        The coffee is brewed by first roasting the green coffee beans over hot
+                        coals in a brazier. given an opportunity to sample.
+                    </p>
+                </div>
+                <div class="main-btn">
+                    <button class="btn-buy">BUY NOW</button>
+                    <button class="read_more">READ MORE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="info">
+        <div class="wrapper">
+            <div class="info_img">
+                <img src="~/images/CoffeeInfo.png" alt="info-img" class="info-img">
+            </div>
+            <div class="info-text">
+                <h2>Roasted Coffee</h2>
+                <p>
+                    There are many variations of passages of Lorem Ipsum available,
+                    but the majority have suffered alteration in some form, by injected humour,
+                    or randomised words which don't look even slightly believable.
+                    If you are going to use a passage of Lorem Ipsum,
+                    you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                    making this the first true generator on the Internet.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="catalog">
+        <div class="wrapper">
+            <h2>CATALOG</h2>
+            <div class="products-container">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var product in Model.Coffees)
+                        {
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="img_container">
+                                        @switch ((int)product.CoffeeType)
+                                        {
+                                            case 0 :
+                                                <img class="card-img-top" src="~/images/product1 1.png" alt="@product.Name">
+                                                break;
+                                            case 1 :
+                                                <img class="card-img-top" src="~/images/product1 1.png" alt="@product.Name">
+                                                break;
+                                            case 2:
+                                                <img class="card-img-top" src="~/images/product2 1.png" alt="@product.Name">
+                                                break;
+                                            case 3:
+                                                <img class="card-img-top" src="~/images/product2 1.png" alt="@product.Name">
+                                                break;
+                                            case 4:
+                                                <img class="card-img-top" src="~/images/product1 1.png" alt="@product.Name">
+                                                break;
+                                        }                                       
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@product.Name</h5>
+                                        <p class="card-text">
+                                            <del>$@product.Price</del>
+                                        </p>
+                                        <a href="@Url.Action("Details", "AddCartProduct", new { id = product.Id })" class="btn btn-primary">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="navigation">
+                    @if (Model.CurrentPage > 1)
+                    {
+                        <a href="@Url.Action("Index", new { page = Model.CurrentPage - 1 })" class="prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    }
+                    @if (Model.CurrentPage < Model.TotalPages)
+                    {
+                        <a href="@Url.Action("Index", new { page = Model.CurrentPage + 1 })" class="next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="news">
+        <div class="wrapper">
+        </div>
+    </section>
+    <footer class="pre_footer">
+        <div class="footer_logo-text">
+            <img class="footerlogo" src="~/images/HeaderLogo.png" />
+            <p class="footer_logo-text">CoffeMeet</p>
+        </div>
+        <div class="footer_menu-icons">
+            <ul>
+                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Reservation</a></li>
+            </ul>
+        </div>
+        <div class="contacts">
+            <p>Contacts</p>
+            <p>Privacy policy</p>
+        </div>
+    </footer>
+    <div class="container">
+        <main role="main" class="pb-3">
+
+        </main>
+    </div>
+</body>
+</html>
+
+
+
