@@ -12,14 +12,14 @@ namespace Coffe_Shop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
         private readonly Coffe_Shop.Entityes.Context _context;
 
-        public HomeController(Coffe_Shop.Entityes.Context context, ILogger<HomeController> logger)
-        {
+        public HomeController(Context context)
+        {          
             _context = context;
-            _logger = logger;
         }
-
+       
 
         public IActionResult Privacy()
         {
@@ -36,28 +36,28 @@ namespace Coffe_Shop.Controllers
         public async Task<IActionResult> Index(int page = 1, int pageSize = 6)
         {
             try
-            {
-                int totalProducts = await _context.Coffees.CountAsync();
-                int totalPages = (int)Math.Ceiling((decimal)totalProducts / pageSize);
+            {                
+                    int totalProducts = await _context.Coffees.CountAsync();
+                    int totalPages = (int)Math.Ceiling((decimal)totalProducts / pageSize);
 
-                if (page < 1 || page > totalPages)
-                {
-                    return RedirectToAction("Index", new { page = 1, pageSize = pageSize });
-                }
+                    if (page < 1 || page > totalPages)
+                    {
+                        return RedirectToAction("Index", new { page = 1, pageSize = pageSize });
+                    }
 
-                var products = await _context.Coffees
-                    .Skip((page - 1) * pageSize)
-                    .Take(pageSize)
-                    .ToListAsync();
+                    var products = await _context.Coffees
+                        .Skip((page - 1) * pageSize)
+                        .Take(pageSize)
+                        .ToListAsync();
 
-                var model = new CatalogCoffee
-                {
-                    Coffees = products,
-                    CurrentPage = page,
-                    TotalPages = totalPages
-                };
+                    var model = new CatalogCoffee
+                    {
+                        Coffees = products,
+                        CurrentPage = page,
+                        TotalPages = totalPages
+                    };
 
-                return View(model);
+                    return View(model);                
             }
             catch (Exception ex)
             {
