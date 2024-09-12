@@ -24,9 +24,7 @@ namespace Coffe_Shop.Entityes
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-M0BO597\SQLEXPRESS;
-                                          Initial Catalog=Coffee_System;Integrated Security=True;
-                                          Encrypt=True;Trust Server Certificate=True");
+           
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
